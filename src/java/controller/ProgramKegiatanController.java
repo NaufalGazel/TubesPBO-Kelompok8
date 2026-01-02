@@ -13,6 +13,8 @@ import javax.servlet.http.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.time.LocalTime;
+import java.sql.Time;
 
 @WebServlet(name = "ProgramKegiatanController", urlPatterns = {"/program-kegiatan"})
 public class ProgramKegiatanController extends HttpServlet {
@@ -193,7 +195,10 @@ public class ProgramKegiatanController extends HttpServlet {
         k.setNama(req.getParameter("nama"));
         k.setDeskripsi(req.getParameter("deskripsi"));
         k.setTanggal(java.sql.Date.valueOf(req.getParameter("tanggal")));
-        k.setWaktu(java.sql.Time.valueOf(req.getParameter("waktu")));
+        if (waktuStr != null && !waktuStr.isEmpty()) {
+            LocalTime lt = LocalTime.parse(waktuStr); 
+            k.setWaktu(Time.valueOf(lt));
+        }
         k.setTempat(req.getParameter("tempat"));
         k.setProgramId(Integer.parseInt(req.getParameter("program_kerja_id")));
         k.setPicId(user.getId());
