@@ -1,0 +1,339 @@
+/* ================= ROOT ================= */
+:root {
+    --primary: #556B2F;
+    --primary-soft: #6f8a3a;
+    --bg-light: #f7f8f6;
+    --bg-white: #ffffff;
+    --text-dark: #2b2b2b;
+    --text-muted: #6b6b6b;
+}
+
+/* ================= RESET & BASE ================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", Arial, sans-serif;
+    background: var(--bg-light);
+    color: var(--text-dark);
+}
+
+/* ================= APP CONTAINER ================= */
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ================================================= */
+/* ================= SIDEBAR ======================= */
+/* ================================================= */
+
+.sidebar {
+    width: 240px;
+    background: var(--primary);
+    color: #ffffff;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-logo {
+    width: 40px;
+}
+
+/* ===== Sidebar Header ===== */
+.sidebar-header {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 16px;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.sidebar-header span {
+    color: #e9f0dc;
+}
+
+.sidebar-logo span {
+    font-size: 24px;
+    font-weight: 700;
+    color: #556B2F;
+}
+
+/* ===== Divider ===== */
+.sidebar-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.35);
+    margin: 0 16px;
+}
+
+/* ===== Sidebar Menu ===== */
+.sidebar-menu {
+    padding: 16px 12px 0;
+    margin: 0;
+}
+
+.sidebar-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 14px;
+    margin-bottom: 6px;
+
+    color: #f1f4ea;
+    text-decoration: none;
+    border-radius: 8px;
+
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+}
+
+/* ===== Hover ===== */
+.sidebar-menu a:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* ===== ACTIVE MENU ===== */
+.sidebar-menu a.active {
+    background: rgba(255, 255, 255, 0.22);
+    color: #ffffff;
+    font-weight: 600;
+    position: relative;
+}
+
+/* indikator garis di kiri */
+.sidebar-menu a.active::before {
+    content: "";
+    position: absolute;
+    left: -12px;
+    top: 6px;
+    bottom: 6px;
+    width: 4px;
+    border-radius: 4px;
+    background: #e9f0dc;
+}
+
+
+/* ================================================= */
+/* ================= MAIN AREA ===================== */
+/* ================================================= */
+
+.main-area {
+    margin-left: 240px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-white);
+}
+
+/* ================================================= */
+/* ================= NAVBAR ======================== */
+/* ================================================= */
+
+.navbar {
+    height: 64px;
+    background: var(--bg-white);
+    border-bottom: 1px solid #e5e5e5;
+
+    position: fixed;
+    top: 0;
+    left: 240px;
+    right: 0;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+}
+
+.navbar .title {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.navbar .right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.navbar .username {
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.navbar .logout-btn {
+    padding: 6px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--primary);
+    background: #fff;
+    color: var(--primary);
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.navbar .logout-btn:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+/* ================================================= */
+/* ================= CONTENT ======================= */
+/* ================================================= */
+
+.content {
+    padding: 96px 40px 32px 40px;
+}
+
+/* ================================================= */
+/* ================= DASHBOARD ===================== */
+/* ================================================= */
+
+.dashboard-header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.dashboard-header .user-name {
+    color: var(--primary);
+}
+
+.dashboard-header .user-role {
+    margin-top: 6px;
+    color: var(--text-muted);
+    font-size: 16px;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+    margin-top: 48px;
+    display: flex;
+    gap: 48px;
+    align-items: center;
+}
+
+.hero-text h2 {
+    font-size: 42px;
+    margin: 0;
+}
+
+.hero-text p {
+    margin-top: 16px;
+    max-width: 520px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* ===== Structure ===== */
+.structure {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.structure h2 {
+    font-size: 32px;
+    margin-bottom: 32px;
+}
+
+.stat-grid {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+}
+
+.stat-card {
+    background: #fff;
+    padding: 28px 36px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    min-width: 180px;
+}
+
+.stat-number {
+    display: block;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.stat-label {
+    margin-top: 8px;
+    display: block;
+    color: var(--text-muted);
+}
+
+/* ===== Features ===== */
+.features {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 32px;
+    margin-bottom: 32px;
+}
+
+.feature-grid {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+}
+
+.feature-card {
+    background: #fff;
+    padding: 28px;
+    border-radius: 16px;
+    width: 260px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.feature-card h3 {
+    margin-top: 0;
+    color: var(--primary);
+}
+
+.feature-card p {
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* ===============================
+   MODAL GLOBAL
+================================ */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: #fff;
+  width: 420px;
+  max-width: 90%;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.2);
+}
