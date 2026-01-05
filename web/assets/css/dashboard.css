@@ -1,0 +1,162 @@
+/* =====================
+   GLOBAL
+   ===================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: #ffffff;
+    color: #333;
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* =====================
+   MAIN CONTENT
+   ===================== */
+.main-content {
+    flex: 1;
+    padding: 32px 48px;
+}
+
+/* =====================
+   HEADER
+   ===================== */
+.dashboard-header {
+    margin-bottom: 32px;
+}
+
+.dashboard-header h1 {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.user-name {
+    color: #556B2F;
+}
+
+.user-role {
+    margin-top: 6px;
+    font-size: 15px;
+    color: #666;
+}
+
+/* =====================
+   HERO
+   ===================== */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+    gap: 40px;
+}
+
+.hero-text {
+    max-width: 540px;
+}
+
+.hero-text h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.hero-text p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #555;
+}
+
+.dashboard-image {
+    width: 800px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* =====================
+   STRUCTURE
+   ===================== */
+.structure {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.structure h2 {
+    font-size: 24px;
+    margin-bottom: 32px;
+}
+
+.stat-grid {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.stat-card {
+    width: 200px;
+    padding: 24px;
+    border-radius: 12px;
+    background: #f2f2f2;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.stat-number {
+    font-size: 36px;
+    font-weight: 700;
+    color: #556B2F;
+}
+
+.stat-label {
+    display: block;
+    margin-top: 8px;
+    font-size: 15px;
+    color: #555;
+}
+
+/* =====================
+   FEATURES
+   ===================== */
+.features {
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 24px;
+    margin-bottom: 32px;
+}
+
+.feature-grid {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.feature-card {
+    width: 260px;
+    padding: 24px;
+    border-radius: 12px;
+    background: #f2f2f2;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.feature-card h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #556B2F;
+}
+
+.feature-card p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
