@@ -31,8 +31,7 @@ Password database tidak disimpan di kode, tetapi dibaca dari Environment Variabl
 ### 3.2. Membuat File setenv.bat
 - Buka folder: C:\xampp\tomcat\bin
 - Buat file baru bernama: setenv.bat
-- Isi file tersebut dengan: set DB_PASSWORD= x
-*x : Isi password harus sesuai dengan password user MySQL yang digunakan.
+- Isi file tersebut dengan: set DB_PASSWORD= x  (*x : Isi password harus sesuai dengan password user MySQL yang digunakan.)
 ### 3.3. Jalankan Projek Tugas Besar
 - Buka Netbeans
 - Import Project : PBO-HMIT.zip
