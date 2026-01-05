@@ -33,10 +33,7 @@ Password database tidak disimpan di kode, tetapi dibaca dari Environment Variabl
 - Buat file baru bernama: setenv.bat
 - Isi file tersebut dengan: set DB_PASSWORD= x
 *x : Isi password harus sesuai dengan password user MySQL yang digunakan.
-
----
-
-## 4. Jalankan Projek Tugas Besar
-### 4.1. Buka Netbeans
-### 4.2. Import Project : PBO-HMIT.zip
-### 4.3. Jalankan project
+### 3.3. Jalankan Projek Tugas Besar
+- Buka Netbeans
+- Import Project : PBO-HMIT.zip
+- Jalankan project
