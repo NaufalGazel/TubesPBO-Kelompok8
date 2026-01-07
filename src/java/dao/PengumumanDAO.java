@@ -4,6 +4,7 @@ import model.Pengumuman;
 import util.DBConnection;
 
 import java.sql.*;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,8 +35,8 @@ public class PengumumanDAO {
             while (rs.next()) {
                 list.add(mapRow(rs));
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new IllegalStateException("Database operation failed", e);
         }
 
         return list;
@@ -70,8 +71,8 @@ public class PengumumanDAO {
             while (rs.next()) {
                 list.add(mapRow(rs));
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new IllegalStateException("Database operation failed", e);
         }
 
         return list;
@@ -104,8 +105,8 @@ public class PengumumanDAO {
             while (rs.next()) {
                 list.add(mapRow(rs));
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new IllegalStateException("Database operation failed", e);
         }
 
         return list;
@@ -137,8 +138,8 @@ public class PengumumanDAO {
             if (rs.next()) {
                 return mapRow(rs);
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new IllegalStateException("Database operation failed", e);
         }
 
         return null;
@@ -163,11 +164,10 @@ public class PengumumanDAO {
             ResultSet rs = ps.executeQuery();
             return rs.next();
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new IllegalStateException("Database operation failed", e);
         }
 
-        return false;
     }
 
     /* =========================
@@ -193,8 +193,8 @@ public class PengumumanDAO {
             ps.setInt(7, p.getPenulisId());
 
             ps.executeUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new IllegalStateException("Database operation failed", e);
         }
     }
 
@@ -221,8 +221,8 @@ public class PengumumanDAO {
             ps.setInt(7, p.getId());
 
             ps.executeUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new IllegalStateException("Database operation failed", e);
         }
     }
 
@@ -239,8 +239,8 @@ public class PengumumanDAO {
         ) {
             ps.setInt(1, id);
             ps.executeUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new IllegalStateException("Database operation failed", e);
         }
     }
 
