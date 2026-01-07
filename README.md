@@ -7,7 +7,7 @@ Project ini telah dikonfigurasi dengan best practice keamanan, konfigurasi fleks
 
 ## 1. Prasyarat
 Pastikan software berikut sudah terinstall:
-- Java JDK 11 atau lebih baru
+- Java JDK 11
 - NetBeans IDE
 - Apache Tomcat (disarankan Tomcat dari XAMPP)
 - MySQL / MariaDB (misalnya dari XAMPP)
@@ -15,24 +15,42 @@ Pastikan software berikut sudah terinstall:
 ---
 
 ## 2. Konfigurasi Database
-### 2.1. Login ke MySQL 
+Penting: xxxxx ganti dengan password yang diinginkan
+### 2.1. Buat Database
+- Buka phpmyadmin setelah menghidupkan modul Apache dan MySQL di XAMPP Control Panel
+- Buat database baru dengan nama: hmit_db
+- Import file hmit_db.sql di dalam database hmit_db yang telah dibuat tadi
+### 2.2. Login ke MySQL 
 - Buka folder: C:\xampp\mysql\bin
 - Buka Command Prompt: mysql -u root -p
 - Masukkan password MySQL Anda (jika kosong, tekan Enter).
-### 2.2. Buat Database 
-- Import file hmit_db.sql di admin MySQL
+### 2.3. Buat User dan Host baru pada server MySQL
+- Lanjutkan Command Prompt:
+  CREATE USER 'app_user'@'localhost'
+  IDENTIFIED BY 'xxxxx';
+- Buka phpmyadmin lalu pada server masukkan prompt SQL berikut:
+  SELECT User, Host FROM mysql.user;
+- Pastikan di dalam tabel terdapat User: app_user dan Host: localhost 
+### 2.4. Pemberian hak akses ke database hmit_db
+- Lanjutkan Command Prompt:
+  GRANT ALL PRIVILEGES ON hmit_db.* TO 'app_user'@'localhost';
+  FLUSH PRIVILEGES;
+- Command Prompt keluar dari user root: EXIT;
 
 ---
 
-## 3. Konfigurasi Environment Variable (WAJIB)
+## 3. Konfigurasi Environment Variable
 Password database tidak disimpan di kode, tetapi dibaca dari Environment Variable.
+Penting: xxxxx ganti dengan password yang diinginkan
 ### 3.1. Lokasi Tomcat
 - Pastikan Tomcat yang digunakan berada di C:\xampp\tomcat
 ### 3.2. Membuat File setenv.bat
 - Buka folder: C:\xampp\tomcat\bin
 - Buat file baru bernama: setenv.bat
-- Isi file tersebut dengan: set DB_PASSWORD= x  (*x : Isi password harus sesuai dengan password user MySQL yang digunakan.)
+  - copy file yang memiliki type: Windows Batch File
+  - rename dan ganti isi file tersebut dengan: set DB_PASSWORD=xxxxx
 ### 3.3. Jalankan Projek Tugas Besar
-- Buka Netbeans
-- Import Project : PBO-HMIT.zip
+- Tentukan lokasi extract project: PBO-HMIT.zip 
+- Buka Netbeans lalu open project (Ctrl+Shift+O)
+- Sesuaikan lokasi project yang telah ditentukan 
 - Jalankan project
