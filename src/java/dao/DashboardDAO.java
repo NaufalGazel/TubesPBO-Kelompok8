@@ -5,6 +5,8 @@ import util.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+
 
 public class DashboardDAO {
 
@@ -22,8 +24,8 @@ public class DashboardDAO {
             if (rs.next()) {
                 return rs.getInt(1);
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new IllegalStateException("Database operation failed", e);
         }
 
         return 0;
@@ -43,8 +45,8 @@ public class DashboardDAO {
             if (rs.next()) {
                 return rs.getInt(1);
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new IllegalStateException("Database operation failed", e);
         }
 
         return 0;
@@ -64,8 +66,8 @@ public class DashboardDAO {
             if (rs.next()) {
                 return rs.getInt(1);
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new IllegalStateException("Database operation failed", e);
         }
 
         return 0;
