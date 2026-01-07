@@ -7,7 +7,7 @@ Project ini telah dikonfigurasi dengan best practice keamanan, konfigurasi fleks
 
 ## 1. Prasyarat
 Pastikan software berikut sudah terinstall:
-- Java JDK 8 atau lebih baru
+- Java JDK 11 atau lebih baru
 - NetBeans IDE
 - Apache Tomcat (disarankan Tomcat dari XAMPP)
 - MySQL / MariaDB (misalnya dari XAMPP)
