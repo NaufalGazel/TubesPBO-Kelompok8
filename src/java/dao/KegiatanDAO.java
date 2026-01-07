@@ -6,6 +6,7 @@ import util.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,8 +46,8 @@ public class KegiatanDAO {
             while (rs.next()) {
                 list.add(map(rs));
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new IllegalStateException("Database operation failed", e);
         }
 
         return list;
@@ -71,8 +72,8 @@ public class KegiatanDAO {
                     list.add(map(rs));
                 }
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new IllegalStateException("Database operation failed", e);
         }
 
         return list;
@@ -97,8 +98,8 @@ public class KegiatanDAO {
                     list.add(map(rs));
                 }
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new IllegalStateException("Database operation failed", e);
         }
 
         return list;
@@ -119,8 +120,8 @@ public class KegiatanDAO {
                     return map(rs);
                 }
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new IllegalStateException("Database operation failed", e);
         }
 
         return null;
@@ -173,8 +174,8 @@ public class KegiatanDAO {
             ps.setInt(7, k.getId());
 
             ps.executeUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new IllegalStateException("Database operation failed", e);
         }
     }
 
@@ -186,8 +187,8 @@ public class KegiatanDAO {
         ) {
             ps.setInt(1, id);
             ps.executeUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new IllegalStateException("Database operation failed", e);
         }
     }
 
@@ -205,8 +206,8 @@ public class KegiatanDAO {
             ResultSet rs = ps.executeQuery()
         ) {
             if (rs.next()) return rs.getInt(1);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new IllegalStateException("Database operation failed", e);
         }
 
         return 0;
@@ -223,8 +224,8 @@ public class KegiatanDAO {
             ResultSet rs = ps.executeQuery()
         ) {
             if (rs.next()) return rs.getInt(1);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new IllegalStateException("Database operation failed", e);
         }
 
         return 0;
@@ -246,8 +247,8 @@ public class KegiatanDAO {
             ps.setInt(1, departemenId);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) return rs.getInt(1);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new IllegalStateException("Database operation failed", e);
         }
 
         return 0;
@@ -268,8 +269,8 @@ public class KegiatanDAO {
             ps.setInt(1, bidangId);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) return rs.getInt(1);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new IllegalStateException("Database operation failed", e);
         }
 
         return 0;
@@ -278,7 +279,7 @@ public class KegiatanDAO {
     /* =====================================================
        RESULTSET MAPPER (HARUS PALING BAWAH)
     ===================================================== */
-    private Kegiatan map(ResultSet rs) throws Exception {
+    private Kegiatan map(ResultSet rs) throws SQLException {
         Kegiatan k = new Kegiatan();
 
         k.setId(rs.getInt("id"));
