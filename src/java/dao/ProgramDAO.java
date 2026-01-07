@@ -7,6 +7,7 @@ import util.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,8 +34,8 @@ public class ProgramDAO {
                 p.setNama(rs.getString("nama"));
                 list.add(p);
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new IllegalStateException("Database operation failed", e);
         }
 
         return list;
@@ -63,8 +64,8 @@ public class ProgramDAO {
                 p.setNama(rs.getString("nama"));
                 list.add(p);
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new IllegalStateException("Database operation failed", e);
         }
 
         return list;
@@ -87,8 +88,8 @@ public class ProgramDAO {
                 p.setNama(rs.getString("nama"));
                 list.add(p);
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new IllegalStateException("Database operation failed", e);
         }
 
         return list;
@@ -122,8 +123,8 @@ public class ProgramDAO {
                 dto.setTerlaksana(rs.getInt("terlaksana"));
                 list.add(dto);
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new IllegalStateException("Database operation failed", e);
         }
 
         return list;
@@ -157,8 +158,8 @@ public class ProgramDAO {
                 dto.setTerlaksana(rs.getInt("terlaksana"));
                 list.add(dto);
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new IllegalStateException("Database operation failed", e);
         }
 
         return list;
@@ -186,8 +187,8 @@ public class ProgramDAO {
                 dto.setTotalProgram(rs.getInt("total_program"));
                 dto.setTerlaksana(rs.getInt("terlaksana"));
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new IllegalStateException("Database operation failed", e);
         }
 
         return dto;
